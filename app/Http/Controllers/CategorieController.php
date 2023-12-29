@@ -9,11 +9,11 @@ class CategorieController extends Controller
     public function liste_categories()
     {
         $categories = Category::all();
-        return view('categories.liste', compact('categories'));
+        return view('backend.categories.liste', compact('categories'));
     }
     public function ajouter_categorie()
     {
-        return view('categories.ajouter');
+        return view('backend.categories.ajouter');
     }
 
     public function ajouter_traitement_categorie(Request $request)
@@ -34,7 +34,7 @@ class CategorieController extends Controller
     public function modifier_categorie($id)
     {
         $category = Category::find($id);
-        return view('categories.modifier', compact('category'));
+        return view('backend.categories.modifier', compact('category'));
     }
     public function modifier_traitement_category(Request $request)
     {

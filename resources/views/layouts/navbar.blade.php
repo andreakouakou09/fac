@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 	<!-- Start Meta -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="Sarfox - Technology & IT Solutions HTML5 Template" />
-	<meta name="keywords" content="Creative, Digital, multipage, landing, freelancer template" />
-	<meta name="author" content="ThemeOri">
+	<meta name="description" content="Motivateur - Mentoring, Coach et Speaker" />
+	<meta name="keywords" content="Coaching, Digital, Informatique, Transport, Motivation" />
+	<meta name="author" content="FirmeAttouCo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Title of Site -->
 	<title>FAC - Firme Attou & Co</title>
@@ -67,7 +67,7 @@
 						<ul>
 							<li><a href="https://www.facebook.com/profile.php?id=61552336384280&locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
 							</li>
-							<li><a href="{{ asset('front/') }}"><i class="fab fa-twitter"></i></a>
+							<li><a href="{{ asset('/') }}"><i class="fab fa-twitter"></i></a>
 							</li>
 							<li><a href="https://www.instagram.com/firme_attou_co/"><i class="fab fa-instagram"></i></a>
 							</li>
@@ -84,7 +84,7 @@
 			<div class="header__area-menubar custom-container">
 				<div class="header__area-menubar-logo">
 					<a href="{{ asset('/') }}">
-						<img src="{{ asset('front/assets/img/Logo.png') }}" alt="">
+						<img src="{{ asset('front/assets/img/logo.png') }}" alt="logoFAC">
 					</a>
 					<div class="responsive-menu"></div>
 				</div>
@@ -173,13 +173,14 @@
 						<h3 class="mb-25">Nous Suivre</h3>
 						<div class="follow__us-social">
 							<ul>
-								<li><a href="{{ asset('front/') }}"><i class="fab fa-facebook-f"></i></a>
+
+								<li><a href="https://www.facebook.com/profile.php?id=61552336384280&locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
 								</li>
-								<li><a href="{{ asset('front/') }}"><i class="fab fa-twitter"></i></a>
+								<li><a href="{{ asset('/') }}"><i class="fab fa-twitter"></i></a>
 								</li>
-								<li><a href="{{ asset('front/') }}"><i class="fab fa-instagram"></i></a>
+								<li><a href="https://www.instagram.com/firme_attou_co/"><i class="fab fa-instagram"></i></a>
 								</li>
-								<li><a href="{{ asset('front/') }}"><i class="fab fa-linkedin-in"></i></a>
+								<li><a href="https://www.linkedin.com/company/firme-attou-co/"><i class="fab fa-linkedin-in"></i></a>
 								</li>
 							</ul>
 						</div>

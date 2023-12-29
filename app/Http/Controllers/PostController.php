@@ -11,12 +11,12 @@ class PostController extends Controller
     public function liste_posts()
     {
         $posts = Post::paginate(3);
-        return view('posts.liste', compact('posts'));
+        return view('backend.posts.liste', compact('posts'));
     }
     public function ajouter_post()
     {
         $categories = Category::all();
-        return view('posts.ajouter', compact('categories'));
+        return view('backend.posts.ajouter', compact('categories'));
     }
     public function ajouter_traitement_post(Request $request)
     {
@@ -42,7 +42,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $categories = Category::all();
 
-        return view('posts.modifier', compact('post', 'categories'));
+        return view('backend.posts.modifier', compact('post', 'categories'));
     }
 
     public function modifier_traitement_post(Request $request)

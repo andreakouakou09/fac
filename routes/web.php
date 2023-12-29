@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrondController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,14 +24,11 @@ Route::get('/apropos', [FrondController::class, 'apropos']);
 Route::get('/services', [FrondController::class, 'services']);
 Route::get('/actualites', [FrondController::class, 'actualites']);
 Route::get('/contact', [FrondController::class, 'contact']);
-Route::post('/contact_mail', [FrondController::class, 'contact_mail_send']);
+Route::post('/contact_traitement', [FrondController::class, 'traitement_contact']);
+// Route::post('/contact_mail', [FrondController::class, 'contact_mail_send']);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-    // Route::get('/dashboard', [DashboardController::class, 'index']);
-
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',  [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
@@ -55,6 +53,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/modifier_categorie/{id}', [CategorieController::class,'modifier_categorie']);
     Route::post('/modifier_traitement_category', [CategorieController::class,'modifier_traitement_category']);
     Route::get('/supprimer_categorie/{id}', [CategorieController::class,'supprimer_categorie']);
+
+    // MESSAGES
+    Route::get('/messages', [MessageController::class, 'liste_message']);
+    Route::get('/view_contact/{contact}', [MessageController::class, 'show_message']);
+    Route::get('/supprimer_contact/{contact}', [MessageController::class,'delete_message']);
+
 });
 
 require __DIR__.'/auth.php';

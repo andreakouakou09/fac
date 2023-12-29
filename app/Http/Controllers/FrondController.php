@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mail\ContactMail;
-use Mail;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class FrondController extends Controller
@@ -27,10 +27,31 @@ class FrondController extends Controller
     {
         return view('front.contact');
     }
-    public function contact_mail_send(Request $request)
+    public function traitement_contact(Request $request)
     {
-        // dd($request->all());
-        Mail::to('andrealastar38@yahoo.fr')->send(new ContactMail($request));
-        return redirect('contact');
+        $request->validate([
+            'nomp' => 'required',
+            'email' => 'required',
+            'telephone' =>'required|numeric|digits:10',
+            'sujet' => 'required',
+            'message' => 'required'
+        ]);
+
+        $message = new Message();
+        $message->nomprenom = $request->nomp;
+        $message->email = $request->email;
+        $message->contact = $request->telephone;
+        $message->sujet = $request->sujet;
+        $message->message = $request->message;
+        $message->save();
+
+        return redirect('/contact')->with('status','Votre message a été envoyé');;
+
     }
+    // public function contact_mail_send(Request $request)
+    // {
+    //     // dd($request->all());
+    //     Mail::to('andrealastar38@yahoo.fr')->send(new ContactMail($request));
+    //     return redirect('contact');
+    // }
 }

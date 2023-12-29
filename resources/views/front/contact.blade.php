@@ -56,7 +56,7 @@
 							<p>info@attouco.com</p>
 						</a>
 						<a href="#">
-							<p>info.@fac-immo.com</p>
+							<p>info@fac-immo.com</p>
 						</a>
 					</div>
 				</div>
@@ -73,13 +73,25 @@
 						<div class="contact__form-form">
 							<div class="contact__form-form-title">	<span class="section-top">Entrer en contact</span>
 								<h2>Toujours prêt pour vos solutions</h2>
+
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li class="alert alert-danger">{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+
 							</div>
-							<form action="mailto:andreakouakou38@gmail.com" method="post" enctype="text/plain">
-                                {{ csrf_field() }}
+							<form action="{{ url('/contact_traitement') }}" method="post" >
+                                @csrf
 								<div class="row">
 									<div class="col-lg-4 col-md-6 mb-30">
 										<div class="contact__form-form-group icon">	<i class="far fa-user"></i>
-											<input type="text" name="name" placeholder="Votre Nom" required="required">
+											<input type="text" name="nomp" placeholder="Votre Nom" required="required">
 										</div>
 									</div>
 									<div class="col-lg-4 col-md-6 md-mb-30">
@@ -88,13 +100,18 @@
 										</div>
 									</div>
 									<div class="col-lg-4 lg-mb-30">
+										<div class="contact__form-form-group icon">	<i class="fas fa-mobile-alt"></i>
+											<input type="tel" name="telephone" placeholder="Telephone" required="required">
+										</div>
+									</div>
+                                    <div class="col-lg-12 mb-30">
 										<div class="contact__form-form-group icon">	<i class="far fa-address-book"></i>
-											<input type="text" name="subject" placeholder="Sujet" required="required">
+											<input type="tel" name="sujet" placeholder="Sujet" required="required">
 										</div>
 									</div>
 									<div class="col-lg-12 mb-30">
 										<div class="contact__form-form-group icon">	<i class="far fa-comments"></i>
-											<textarea name="message" rows="8" placeholder="Message"></textarea>
+											<textarea name="message" rows="8" placeholder="Message" required="required"></textarea>
 										</div>
 									</div>
 									<div class="col-lg-12">
