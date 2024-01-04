@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrondController::class, 'accueil']);
 Route::get('/apropos', [FrondController::class, 'apropos']);
 Route::get('/services', [FrondController::class, 'services']);
+Route::get('/formations', [FrondController::class, 'formations']);
 Route::get('/actualites', [FrondController::class, 'actualites']);
 Route::get('/contact', [FrondController::class, 'contact']);
 Route::post('/contact_traitement', [FrondController::class, 'traitement_contact']);

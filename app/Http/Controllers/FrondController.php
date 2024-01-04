@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mail\ContactMail;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -48,10 +47,8 @@ class FrondController extends Controller
         return redirect('/contact')->with('status','Votre message a été envoyé');;
 
     }
-    // public function contact_mail_send(Request $request)
-    // {
-    //     // dd($request->all());
-    //     Mail::to('andrealastar38@yahoo.fr')->send(new ContactMail($request));
-    //     return redirect('contact');
-    // }
+    public function formations()
+    {
+        return view('front.formation');
+    }
 }

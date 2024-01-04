@@ -32,8 +32,8 @@
 						<div class="services__area-item-icon">
 							<img src="{{ asset('front/assets/img/icon/services-1.png') }}" alt="">
 						</div>
-						<h3><a href="services-details.html">Formation</a></h3>
-						<p>Renforcez vos capacités en suivant des formations pratiques</p> <a href="services-details.html">Lire plus</a>
+						<h3><a href="{{ asset('/formations') }}">Formation</a></h3>
+						<p>Renforcez vos capacités en suivant des formations pratiques</p> <a href="{{ asset('/formations') }}">Lire plus</a>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-6 md-mb-30">
